@@ -1,7 +1,6 @@
 const cacheShell = 'app-shell';
 const cacheData = 'app-data';
-/*não está salvando no cache Storage - VER */
-const filesToCache = [//modifiquei
+const filesToCache = [
   '/',
   "/index.html",
   "/favicon.ico",
