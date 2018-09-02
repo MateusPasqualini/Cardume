@@ -29,10 +29,11 @@ class CadastroEvento  extends React.Component {
     
       render() {
         return (
-          <form>
+          <form className='form-group'>
             <label>
-              description:
+              Descrição:
               <input
+                className='form-control'
                 name="Description"
                 type="text"
                 checked={this.state.description}
@@ -40,40 +41,45 @@ class CadastroEvento  extends React.Component {
             </label>
             <br />
             <label>
-              titulo:
+              Titulo:
               <input
+                className='form-control'
                 name="Titulo"
                 type="text"
                 value={this.state.titulo}
                 onChange={this.handleInputChange} />
             </label><br />
             <label>
-                inicio:
+                Inicio:
                 <input
+                className='form-control'
                 name="Inicio"
                 type="text"
                 value={this.state.inicio}
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
-                fim:
+                Fim:
                 <input
+                className='form-control'
                 name="Fim"
                 type="text"
                 value={this.state.fim}
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
-                adress:
+                Endereço:
                 <input
+                className='form-control'
                 name="Adress"
                 type="text"
                 value={this.state.adress}
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
-                duration:
+                Duração:
                 <input
+                className='form-control'
                 name="Duration"
                 type="text"
                 value={this.state.duration}

@@ -1,6 +1,6 @@
 body{
   background-color: white;
-  font-family: Bariol;
+  font-family: Helvetica;
 }
 .App-header{
   padding-bottom: 2%;
@@ -9,6 +9,12 @@ body{
 
   margin-bottom: 2%;
 }
+.button{
+  background-color: linear-gradient(270deg, #2FDD7E 0%, #16C5F4 100%);
+}
+.btn, .btn-primary{
+  background-color: linear-gradient(270deg, #2FDD7E 0%, #16C5F4 100%);
+}
 .footer {
   position: fixed;
   left: 0;
@@ -16,6 +22,9 @@ body{
   width: 100%;
   color: white;
   text-align: center;
+}
+label{
+  text-align: left;
 }
 .App {
   text-align: center;

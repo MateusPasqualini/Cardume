@@ -14,11 +14,15 @@ class App extends Component {
     this.state = {page:'', detalhes: []};
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleClickEvento = this.handleClickEvento.bind(this);
   }
   handleClick(e) {
     this.setState({ page: 'confirmP' });
   }
 
+  handleClickEvento(e) {
+    this.setState({ page: 'cadastroEven' });
+  }
   componentDidMount() {
   let url = 'https://cardume.herokuapp.com/eventos'
    fetch(url).
@@ -43,9 +47,11 @@ class App extends Component {
          </header>
          {!pagina ?
           <Eventos eve={detalhes} />
-        : <PresencaConfirmada />}
-        {pagina=='cadastroEven' && <CadastroEvento/>}
-          {pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>}
+          : pagina ==='confirmP' &&  <PresencaConfirmada />}
+        {pagina==='cadastroEven' && <CadastroEvento/>}
+          {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Confirmar Presença</button>}
+          {(pagina==='confirmP') && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Cadastro de Evento</button>}
+          {(!pagina && pagina==='cadastroEven') && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Primary</button>}
       </div>
     );
   }
