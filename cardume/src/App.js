@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ConfirmarPresenca from './components/confirmarPresenca';
+import PresencaConfirmada from './components/presencaConfirmada';
 import Detalhes from './components/detalhes';
 import CadastroEvento from './components/cadastroEvento';
 import './css/App.css';
@@ -43,7 +43,7 @@ class App extends Component {
          </header>
          {!pagina ?
           <Eventos eve={detalhes} />
-        : <ConfirmarPresenca />}
+        : <PresencaConfirmada />}
         {pagina=='cadastroEven' && <CadastroEvento/>}
           {pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>}
       </div>
