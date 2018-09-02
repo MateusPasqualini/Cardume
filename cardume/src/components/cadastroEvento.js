@@ -9,7 +9,9 @@ class CadastroEvento  extends React.Component {
           description: '',
           titulo: '',
           inicio: '',
-          fim: ''
+          fim: '',
+          adress: '',
+          duration: null
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -59,6 +61,22 @@ class CadastroEvento  extends React.Component {
                 name="Fim"
                 type="text"
                 value={this.state.fim}
+                onChange={this.handleInputChange} />                
+            </label><br />
+            <label>
+                adress:
+                <input
+                name="Adress"
+                type="text"
+                value={this.state.adress}
+                onChange={this.handleInputChange} />                
+            </label><br />
+            <label>
+                duration:
+                <input
+                name="Duration"
+                type="text"
+                value={this.state.duration}
                 onChange={this.handleInputChange} />                
             </label><br />
           </form>
