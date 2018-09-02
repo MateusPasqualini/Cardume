@@ -13,10 +13,11 @@ class Detalhes extends React.Component {
             <div>
                 <p>{this.props.det.descricao}</p>
                 <p>{this.props.det.titulo}</p>
-                <p>{dateFormat(this.props.det.data_inicio, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</p>
-                <p>{dateFormat(this.props.det.data_fim, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</p>
-                <p>{this.props.det.endereco}</p>
-                <p>{this.props.det.duracao}</p>
+                <p>{dateFormat(this.props.det.inicio, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</p>
+                <p>{dateFormat(this.props.det.fim, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</p>
+                <p>{this.props.det.adress}</p>
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.477222,0&zoom=14&size=400x400&key=<AIzaSyAcm-qjeL6IiBFUcnjrbdPbzNjqPuW4FcI>"/>
+                <p>{this.props.det.duration}</p>
             </div>
         );
     } 
