@@ -86,12 +86,8 @@ class App extends Component {
             />
          ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
-<<<<<<< HEAD
           {pagina==='detalhes' && <Detalhes det={detalhes} page={pagina}/>}
-=======
-          {pagina==='detalhes' && <Detalhes det={detalhes}/>}
           {pagina==='register' && <Register />}
->>>>>>> 4608de31f68e7c023115a771966a9d162a014b18
           {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
           {(pagina==='detalhes') && <button  onClick={this.handleClickDetalhes} type="button" class="btn btn-primary">Quero ajudar!</button>}
           {(pagina==='confirmPresenca') && <button  onClick={this.handleClickIni} type="button" class="btn btn-primary">Ir para a página inicial</button>}

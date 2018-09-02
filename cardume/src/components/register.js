@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import UserModel from '../model/userModel';
-import Checkin from '../model/checkin';
 
 class Register extends React.Component {
 
