@@ -2,6 +2,9 @@ body{
   background-color: white;
   font-family: Helvetica;
 }
+.btnEvento{
+  float: right;
+}
 .imgBack{
   float:left;
   padding-left:0.8rem;
