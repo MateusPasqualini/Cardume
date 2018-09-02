@@ -11,7 +11,7 @@ import back from './assets/back.svg';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {page:'', detalhes: []};
+    this.state = {page:'', detalhes:null};
 
     this.handleClick = this.handleClick.bind(this);
     this.handleClickEvento = this.handleClickEvento.bind(this);
@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   handleClickIni(e) {
-    this.setState({page: ''})
+    this.setState({page: ''});
   }
 
   handleClickBack(e) {
@@ -47,8 +47,10 @@ class App extends Component {
     this.setState({ page: 'confirmPresenca' });  
   }
   componentDidMount() {
-  let url = 'https://cardume.herokuapp.com/eventos/lista'
+  let url = 'https://cardume.herokuapp.com/eventos/lista';
+  console.log("aaaa" + url);
    fetch(url).
+   //then(response => response.then((resp) => {
     then(response => response.json()).then((resp) => {
         console.log(resp);
         this.setState({
@@ -58,17 +60,22 @@ class App extends Component {
 
 }
   render() {
+
     const pagina = this.state.page;
     const detalhes = this.state.detalhes;
+    {console.log("AAAAAA" + detalhes)};  
     return (
+      this.state.detalhes ?
       <div className="App">
         <header className="App-header">
         <img onClick={this.handleClickBack} src={back} alt='logo'/>
          <img src={logo} alt='logo'/>
          </header>
-         {!pagina ?
-          <Eventos eve={detalhes} />
-          : pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
+         {!pagina ?(
+           
+          <Eventos detalhes={detalhes}
+            />
+         ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
           {pagina==='detalhes' && <Detalhes det={detalhes}/>}
           {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
@@ -77,6 +84,7 @@ class App extends Component {
           {(!pagina && pagina==='cadastroEven') && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Primary</button>}
           {!pagina && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Cadastro de evento</button>}
       </div>
+      :null
     );
   }
 }

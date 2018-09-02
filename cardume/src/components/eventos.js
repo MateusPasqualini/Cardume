@@ -3,6 +3,7 @@ import '../css/cards.css';
 import date from './../assets/date.svg';
 import point from './../assets/point.svg';
 import Moment from 'react-moment';
+import Evento from './evento';
 
 class Eventos extends React.Component {
     
@@ -11,22 +12,10 @@ class Eventos extends React.Component {
       }
 
     render() { 
-        {console.log(this.props.eve)}
-        return (
-            <div className='listCard'>
-            <h5 className='titleListCard'>Onde você quer doar seu tempo?</h5>
-            <div class='card'>
-            <div class='card-body'>
-                <h5 className='card-title'>{this.props.eve.titulo}</h5>
-                <p className='card-text'>{this.props.eve.description}</p>
-                <ul>
-                <li className='date'> <img src={date} alt='date'/> <Moment format="DD-MM-YYYY HH:mm">{this.props.inicio}</Moment> a <Moment format="DD-MM-YYYY HH:mm" date={this.props.fim}/></li>
-                    <li>{this.props.adress}</li>
-                </ul>
-            </div>
-            </div>
-            </div>
-        );
+        return this.props ?(
+            this.props.detalhes.map(c => <Evento key={c.descricao} name={c.titulo} />)
+        )
+        : null
     } 
 }
 export default Eventos;
