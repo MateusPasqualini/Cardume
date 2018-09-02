@@ -25,7 +25,6 @@ export default class UserModel {
 
     setUserID(id) {
         this.userEmail = id;
-        this.checkins = []
     }
 
     setCheckins(checkins){
