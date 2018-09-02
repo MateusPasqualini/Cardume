@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import UserModel from '../model/userModel';
 
-class Register extends React.Component {
-
-    constructor(props) {
-        super(props);
+class Login extends React.Component {
+    constructor() {
+        super();
 
         this.state = { username: '', password: ''};
 
@@ -13,34 +12,30 @@ class Register extends React.Component {
         this.handleChangePassword = this.handleChangePassword.bind(this);
         this.handleClick = this.handleClick.bind(this);
       }
-
     handleChangeUser(event) {
-        this.setState({username: event.target.value});
+        return this.setState({username: event.target.value});
     }
 
-
     handleChangePassword(event) {
-        this.setState({password: event.target.value});
+        return this.setState({password: event.target.value});
     }
 
     handleClick (e) {
-        const userMod = UserModel.getInstance().getUserID()
-        const haveUser = userMod != undefined && userMod != '';
-        console.log("userMode" + userMod);
 
         const fakeData = {
             "email": this.state.username,
 	        "senha": this.state.password
         };
 
-
-
-            axios.post("https://cardume.herokuapp.com/eventos/registerUser", fakeData)
+            axios.post("https://cardume.herokuapp.com/eventos/login", fakeData)
             .then( response => { 
-                console.log("Register")
-                console.log(response)
+                //console.log("Login")
+                //console.log(response)
+                //console.log(response.data.checkin)
                 UserModel.getInstance().setUserID(this.state.username)
-                this.setState({ page: 'cadastroEven' });
+                //UserModel.getInstance().setCheckins(response.data.checkin)
+                //UserModel.getInstance().setMoeda(response.data.moedas);
+                //this.setState({ page: 'cadastroEven' });
             })
             .catch(error => {
                 console.log(error.response)
@@ -48,6 +43,7 @@ class Register extends React.Component {
         }
 
     render() { 
+        const user =this.state.username;
         const haveUser = UserModel.getInstance.getUserID != '' && UserModel.getInstance.getUserID != undefined;
         console.log("haveUser" +  haveUser);
         return (
@@ -55,7 +51,7 @@ class Register extends React.Component {
             <form onSubmit={this.handleClick}>
             <label>
             E-mail:
-            <input type="text" value={this.state.username} onChange={this.handleChangeUser} />
+            <input type="text" value={user} onChange={this.handleChangeUser} />
             </label>
             <label>
             Senha:
@@ -67,4 +63,4 @@ class Register extends React.Component {
         );
     } 
 }
-export default Register;
+export default Login;

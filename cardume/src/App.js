@@ -7,7 +7,9 @@ import Eventos from './components/eventos'
 import logo from './cardume.svg';
 import back from './assets/back.svg';
 import Register from './components/register';
-
+import Perfil from './components/perfil';
+import Login from './components/login';
+import UserModel from './model/userModel';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +21,8 @@ class App extends Component {
     this.handleClickDetalhes = this.handleClickDetalhes.bind(this);
     this.handleClickIni = this.handleClickIni.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
+    this.perfil = this.perfil.bind(this);
+    this.login = this.login.bind(this);
   }
   handleClick(e) {
     this.setState({ page: 'detalhes' });//confirmPresenca
@@ -50,6 +54,14 @@ class App extends Component {
 
   handleClickDetalhes(e){
     this.setState({ page: 'confirmPresenca' });  
+  }
+
+  perfil(e){
+    this.setState({page: 'perfil'});
+  }
+
+  login(e){
+    this.setState({page: 'login'});
   }
 
   handleRegister(e) {
@@ -88,12 +100,16 @@ class App extends Component {
           {pagina==='cadastroEven' && <CadastroEvento/>}
           {pagina==='detalhes' && <Detalhes det={detalhes} page={pagina}/>}
           {pagina==='register' && <Register />}
+          {pagina==='perfil' && <Perfil />}
+          {pagina==='login' && <Login id={UserModel.getInstance().getUserID()}/>}
           {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
           {(pagina==='detalhes') && <button  onClick={this.handleClickDetalhes} type="button" class="btn btn-primary">Quero ajudar!</button>}
           {(pagina==='confirmPresenca') && <button  onClick={this.handleClickIni} type="button" class="btn btn-primary">Ir para a página inicial</button>}
           {(pagina && pagina==='cadastroEven') && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Primary</button>}
           {!pagina && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Cadastro de evento</button>}
           {!pagina && <button  onClick={this.handleRegister} type="button" class="btn btn-primary">Register</button>}
+          {!pagina && <button  onClick={this.perfil} type="button" class="btn btn-primary">Perfil</button>}
+          {!pagina && <button  onClick={this.login} type="button" class="btn btn-primary">Login</button>}
       </div>
       :null
     );
