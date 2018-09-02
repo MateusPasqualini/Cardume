@@ -24,7 +24,7 @@ class App extends Component {
     this.setState({ page: 'cadastroEven' });
   }
   componentDidMount() {
-  let url = 'https://cardume.herokuapp.com/eventos'
+  let url = 'https://cardume.herokuapp.com/eventos/lista'
    fetch(url).
     then(response => response.json()).then((resp) => {
         console.log(resp);
@@ -57,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App; 

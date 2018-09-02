@@ -9,8 +9,9 @@ class Eventos extends React.Component {
     constructor(props) {
         super(props);
       }
-      
+
     render() { 
+        {console.log(this.props.eve)}
         return (
             <div className='listCard'>
             <h5 className='titleListCard'>Onde você quer doar seu tempo?</h5>
