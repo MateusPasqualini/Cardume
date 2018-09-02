@@ -22,8 +22,8 @@ class Evento extends React.Component {
     return this.props ?(<div className='listCard' onClick={this.update}>
     <div class='card'>
     <div class='card-body'>
-        <p className='card-title'>{this.props.key}</p>
-        <p className='card-text'>{this.props.name}</p>
+        <p className='card-title'>{this.props.name}</p>
+        <p className='card-text'>{this.props.key}</p>
         <p className='card-horario'><img src={Date} alt='date'/> <Moment format="DD/MM/YYYY HH:mm">{this.props.data_inicio}</Moment> a <Moment format="DD-MM-YYYY HH:mm" date={this.props.data_fim}/></p>
         <p className='card-endereco'> <img src={Point} alt='point'></img>  {this.props.endereco}</p>
     </div>

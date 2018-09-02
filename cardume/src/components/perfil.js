@@ -12,14 +12,8 @@ constructor(props){
         return (
             <div>
             <div className='card'>
-            {this.props.id}
-                {UserModel.getInstance().getUserID()}
-            </div>
-            <div className='card'>
-                {UserModel.getInstance().getMoeda()}
-            </div>
-            <div className='card '>
-                {UserModel.getInstance().getCheckins().map(c => Chekins(c))}
+            <p>Letícia</p>
+            <p>trocas</p>
             </div>
             </div>
         ); 

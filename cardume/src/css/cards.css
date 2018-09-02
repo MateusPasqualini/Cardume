@@ -8,6 +8,19 @@ text-align: center;
 letter-spacing: -0.00615385em;
 }
 
+@font-face {
+    font-family: 'bariolregular';
+    src: url('bariol_regular-webfont.eot');
+    src: url('bariol_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('bariol_regular-webfont.woff2') format('woff2'),
+         url('bariol_regular-webfont.woff') format('woff'),
+         url('bariol_regular-webfont.ttf') format('truetype'),
+         url('bariol_regular-webfont.svg#bariolregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 img .imgCard{
     max-width: 50%;
     max-height: 50%;
