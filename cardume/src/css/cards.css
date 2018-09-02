@@ -11,3 +11,12 @@ color: #16C5F4;
     padding-bottom: 5%; 
     box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.2); 
 }
+
+.cardBig{
+    margin-top: 5%;
+    height: 80%;
+    min-height: 80%;
+    max-width: 90%;
+    margin-left: 5%;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.2); 
+}
