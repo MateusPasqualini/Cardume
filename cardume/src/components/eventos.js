@@ -4,6 +4,7 @@ import date from './../assets/date.svg';
 import point from './../assets/point.svg';
 import Moment from 'react-moment';
 import Evento from './evento';
+import Detalhes from './detalhes';
 
 class Eventos extends React.Component {
     
@@ -13,7 +14,10 @@ class Eventos extends React.Component {
 
     render() { 
         return this.props ?(
-            this.props.detalhes.map(c => <Evento descricao={c.descricao} name={c.titulo} endereco={c.endereco}/>)
+            <div>
+            <h5 className='titleListCard'>Onde você quer doar seu tempo?</h5>
+            {this.props.detalhes.map(c => <Evento descricao={c.descricao} name={c.titulo} endereco={c.endereco} page={this.props.pagina}/>)}
+            </div>
         )
         : null
     } 

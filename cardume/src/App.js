@@ -28,6 +28,10 @@ class App extends Component {
     this.setState({ page: 'cadastroEven' });
   }
 
+  handlePage(value) {
+    this.setState({ page: value });
+  }
+
   handleClickIni(e) {
     this.setState({page: ''});
   }
@@ -82,7 +86,7 @@ class App extends Component {
             />
          ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
-          {pagina==='detalhes' && <Detalhes det={detalhes}/>}
+          {pagina==='detalhes' && <Detalhes det={detalhes} page={pagina}/>}
           {pagina==='register' && <Register />}
           {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
           {(pagina==='detalhes') && <button  onClick={this.handleClickDetalhes} type="button" class="btn btn-primary">Quero ajudar!</button>}
