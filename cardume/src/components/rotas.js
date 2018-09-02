@@ -13,6 +13,9 @@ const Rotas = () => (
         <Route path='/presencaConfirmada' component={Presenca}/>
         <Route path='/cadastroEvento' component={CadastroEvento}/>
         <Route path='/detalhes' component={Detalhes}/>
+        {<Route exact path='/detalhes'>
+          <Detalhes props={props}/>
+        </Route>}
       </Switch>
     </main>
   )
