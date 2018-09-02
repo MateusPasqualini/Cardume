@@ -99,7 +99,7 @@ class App extends Component {
           {pagina==='cadastroEven' && <CadastroEvento/>}
           {pagina==='detalhes' && <Detalhes det={detalhes} page={pagina}/>}
           {pagina==='register' && <Register />}
-          {pagina==='perfil' && <Perfil />}
+          {pagina==='perfil' && <Perfil id={UserModel.getInstance().getUserID()}/>}
           {pagina==='login' && <Login id={UserModel.getInstance().getUserID()}/>}
           {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
           {(pagina==='detalhes') && <button  onClick={this.handleClickDetalhes} type="button" class="btn btn-primary">Quero ajudar!</button>}

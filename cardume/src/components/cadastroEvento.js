@@ -103,21 +103,21 @@ class CadastroEvento  extends React.Component {
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
-              Descrição:
-              <textarea
-                className='form-control'
-                name="descricao"
-                type="text"
-                checked={this.state.descricao}
-                onChange={this.handleInputChange} />
-            </label><br/>
-            <label>
               Moedas:
               <input
                 className='form-control'
                 name="moedas"
                 type="number"
                 checked={this.state.moedas}
+                onChange={this.handleInputChange} />
+            </label><br/>
+            <label>
+              Descrição:
+              <textarea
+                className='form-control'
+                name="descricao"
+                type="text"
+                checked={this.state.descricao}
                 onChange={this.handleInputChange} />
             </label><br/>
             <button type='submit' onClick={this.handleSubmit} className='btn btn-primary'>Cadastrar</button>

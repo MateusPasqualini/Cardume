@@ -5,10 +5,15 @@ body{
 .btnEvento{
   float: right;
 }
-.imgBack{
-  float:left;
-  padding-left:0.8rem;
-  padding-top:0.7rem;
+h5{
+  font-weight: 550;
+  color:#151d1e;
+}
+.imgSocial{
+  margin-top:-7rem;
+  width: 30%;
+  height: 30%;
+  float: right;
 }
 .App-header{
   padding-bottom: 2%;
@@ -24,6 +29,12 @@ body{
 .btn, .btn-primary{
   background-image: linear-gradient(270deg, #2FDD7E 0%, #16C5F4 100%);
   border:none;
+  margin-left:2%;
+  margin-bottom:1%;
+}
+
+button .btnChekin{
+  margin: 0 auto!important;
 }
 .footer {
   position: fixed;

@@ -13,8 +13,9 @@ function Evento(props) {
     <div class='card-body'>
         <p className='card-title'>{props.key}</p>
         <p className='card-text'>{props.name}</p>
-        <p className='card-horario'><img src={Date} alt='date'/> <Moment format="DD-MM-YYYY HH:mm">{props.data_inicio}</Moment> a <Moment format="DD-MM-YYYY HH:mm" date={props.data_fim}/></p>
-        <p className='card-endereco'> <img src={Point} alt='point'></img>  {props.endereco}</p>
+        <p className='card-horario'><img src={Date} alt='date'/> <Moment format="DD/MM/YYYY HH:mm">{props.data_inicio}</Moment> - <Moment format="DD/MM/YYYY HH:mm" date={props.data_fim}/></p>
+        <p className='card-endereco'> <img src={Point} alt='point'></img>  {props.endereco}</p>  
+        <p>{props.endereco}</p>
     </div>
     </div>
     </div>

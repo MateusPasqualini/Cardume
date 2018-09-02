@@ -21,9 +21,11 @@ class PresencaConfirmada  extends React.Component {
 
     render() { 
         return (
-            <div className="card cardBig">
+            <div className="card">
+            <div class='card-body'>
                 <p className="card-title">Obrigado por nos ajudar, agora você é mais um peixinho!<br/> Nos vemos no próximo evento!</p>
-                <button onClick={this.handleClick} type="button" className="btn btn-primary">Chekin</button>
+                <div className='btnChekin'><button onClick={this.handleClick} type="button" className="btn btn-primary">Chekin</button></div>
+            </div>
             </div>
         ); 
     } 
