@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import Eventos from './components/eventos'
 import axios from 'axios';
+import logo from './cardume.svg';
 
 import ConfirmarPresenca from './components/confirmarPresenca'
 
@@ -38,12 +39,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-          {!pagina ?
+         <img src={logo} alt='logo'/>
+         </header>
+         {!pagina ?
           <Eventos eve={eventos} />
         : <ConfirmarPresenca />}
           {pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>}
-        </header>
       </div>
     );
   }
