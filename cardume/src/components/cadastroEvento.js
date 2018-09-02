@@ -24,17 +24,17 @@ class CadastroEvento  extends React.Component {
     
       handleInputChange(event) {
         const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
     
         this.setState({
-          [name]: value
+          [name]: target.value
         });
+        console.log("target" +target.value);
       }
 
       handleSubmit(e){
-       // this.setState({email: UserModel.getInstance().getUserID});
-        console.log()
+       this.setState({email: UserModel.getInstance().getUserID});
+        console.log("respopnse")
         axios.post("https://cardume.herokuapp.com/eventos/novoEvento", this.state)
             .then( response => { 
               console.log(response);
@@ -63,7 +63,7 @@ class CadastroEvento  extends React.Component {
                 className='form-control'
                 name="data_inicio"
                 type="date"
-                value={this.state.inicio}
+                value={this.state.data_inicio}
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
@@ -72,7 +72,7 @@ class CadastroEvento  extends React.Component {
                 className='form-control'
                 name="data_fim"
                 type="date"
-                value={this.state.fim}
+                value={this.state.data_fim}
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
@@ -81,7 +81,7 @@ class CadastroEvento  extends React.Component {
                 className='form-control'
                 name="Adress"
                 type="text"
-                value={this.state.adress}
+                value={this.state.endereco}
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
@@ -108,10 +108,19 @@ class CadastroEvento  extends React.Component {
                 className='form-control'
                 name="Descricao"
                 type="text"
-                checked={this.state.description}
+                checked={this.state.descricao}
                 onChange={this.handleInputChange} />
             </label><br/>
-            <button type='submit' onClick='handleSubmit' className='btn btn-primary'>Cadastrar</button>
+            <label>
+              Moedas:
+              <input
+                className='form-control'
+                name="Descricao"
+                type="number"
+                checked={this.state.descricao}
+                onChange={this.handleInputChange} />
+            </label><br/>
+            <button type='submit' onClick={this.handleSubmit} className='btn btn-primary'>Cadastrar</button>
           </form>
         );
       }
