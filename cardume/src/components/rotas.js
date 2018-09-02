@@ -10,7 +10,7 @@ import Register from './register';
 const Rotas = () => (
     <main>
       <Switch>
-        <Route path='/confirmarPresenca' component={Eventos}/>
+       <Route path='/' component={Eventos}/>
         <Route path='/presencaConfirmada' component={Presenca}/>
         <Route path='/cadastroEvento' component={CadastroEvento}/>
         <Route path='/detalhes' component={Detalhes}/>

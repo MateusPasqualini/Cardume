@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-
-
+import axios from 'axios';
+import UserModel from '../model/userModel';
 
 class CadastroEvento  extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          description: '',
-          titulo: '',
-          inicio: '',
-          fim: '',
-          adress: '',
-          duration: null
+          descricao: null,
+          titulo: null,
+          data_inicio: null,
+          endereco: null,
+          data_fim: null,
+          endereco: null,
+          moedas: null,
+          numero_voluntarios: null,
+          telefone: null,
+          email: null
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       }
     
       handleInputChange(event) {
@@ -26,19 +31,22 @@ class CadastroEvento  extends React.Component {
           [name]: value
         });
       }
+
+      handleSubmit(e){
+       // this.setState({email: UserModel.getInstance().getUserID});
+        console.log()
+        axios.post("https://cardume.herokuapp.com/eventos/novoEvento", this.state)
+            .then( response => { 
+              console.log(response);
+            })
+            .catch(error => {
+                console.log(error.response)
+            });
+      }
     
       render() {
         return (
           <form className='form-group'>
-            <label>
-              Descrição:
-              <input
-                className='form-control'
-                name="Description"
-                type="text"
-                checked={this.state.description}
-                onChange={this.handleInputChange} />
-            </label>
             <br />
             <label>
               Titulo:
@@ -53,8 +61,8 @@ class CadastroEvento  extends React.Component {
                 Inicio:
                 <input
                 className='form-control'
-                name="Inicio"
-                type="text"
+                name="data_inicio"
+                type="date"
                 value={this.state.inicio}
                 onChange={this.handleInputChange} />                
             </label><br />
@@ -62,8 +70,8 @@ class CadastroEvento  extends React.Component {
                 Fim:
                 <input
                 className='form-control'
-                name="Fim"
-                type="text"
+                name="data_fim"
+                type="date"
                 value={this.state.fim}
                 onChange={this.handleInputChange} />                
             </label><br />
@@ -77,14 +85,33 @@ class CadastroEvento  extends React.Component {
                 onChange={this.handleInputChange} />                
             </label><br />
             <label>
-                Duração:
+                Telefone:
                 <input
                 className='form-control'
-                name="Duration"
-                type="text"
-                value={this.state.duration}
+                name="Telefone"
+                type="number"
+                value={this.state.telefone}
                 onChange={this.handleInputChange} />                
             </label><br />
+            <label>
+                Número de voluntários:
+                <input
+                className='form-control'
+                name="Telefone"
+                type="number"
+                value={this.state.numero_voluntarios}
+                onChange={this.handleInputChange} />                
+            </label><br />
+            <label>
+              Descrição:
+              <textarea
+                className='form-control'
+                name="Descricao"
+                type="text"
+                checked={this.state.description}
+                onChange={this.handleInputChange} />
+            </label><br/>
+            <button type='submit' onClick='handleSubmit' className='btn btn-primary'>Cadastrar</button>
           </form>
         );
       }
