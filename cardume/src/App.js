@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Eventos from './components/eventos'
-import axios from 'axios';
-
-import ConfirmarPresenca from './components/confirmarPresenca'
+import ConfirmarPresenca from './components/confirmarPresenca';
+import Detalhes from './components/detalhes';
+import CadastroEvento from './components/cadastroEvento';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {page:'', eventos: []};
+    this.state = {page:'', detalhes: []};
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -22,11 +21,11 @@ class App extends Component {
     then(response => response.json()).then((resp) => {
         console.log(resp);
         this.setState({
-          eventos: resp
+          detalhes: resp
         });
       });
 
-      console.log("AQUI:"+this.state.eventos.titulo);
+      console.log("AQUI:"+this.state.detalhes.titulo);
   //   axios
   //   .get(`https://cardume.herokuapp.com/eventos`)
   //   .then(response => {
@@ -61,15 +60,15 @@ class App extends Component {
 
   render() {
     const pagina = this.state.page;
-    const eventos = this.state.eventos;
-    console.log("ev" + eventos.titulo);
+    const detalhes = this.state.detalhes;
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
           {!pagina ?
-          <Eventos ev={eventos} />
+          <Detalhes det={detalhes} />
         : <ConfirmarPresenca />}
+          <CadastroEvento/>
           <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>
               <p>{}</p>
         </header>
