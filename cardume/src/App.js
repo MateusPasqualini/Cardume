@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import Eventos from './components/eventos'
 import axios from 'axios';
 
@@ -27,34 +27,6 @@ class App extends Component {
       });
 
       console.log("AQUI:"+this.state.eventos.titulo);
-  //   axios
-  //   .get(`https://cardume.herokuapp.com/eventos`)
-  //   .then(response => {
-  //     this.setState({ eventos: response });  
-  //     console.log("ESSE" + response.json());
-
-  // //  //   cria um array de eventos
-  // //     const novosEventos = response.map(c => {
-  // //       return {
-  // //           id: c.description,
-	// // 	        titulo: "Evento A",
-	// // 	        atividade: "Atividade A",
-	// // 	        proprietario: "Empresa A",
-  // //           qr: "http://link.do.qr-code"
-  // //        };
-  // //     });
-
-  // //     // cria um novo objeto de "estado" sem alterar o objeto de estado original
-       
-  // //     const novoEstado = Object.assign({}, this.state.eventos, {
-  // //       eventos: novosEventos
-  // //     });
-
-  // //     // // store the new state object in the component's state
-  // //     this.setState(novoEstado);
-  // //     console.log(this.state.eventos.description)
-  //   })
-  //    .catch(error => console.log(error));
 }
 
 
@@ -68,10 +40,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
           {!pagina ?
-          <Eventos ev={eventos} />
+          <Eventos eve={eventos} />
         : <ConfirmarPresenca />}
-          <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>
-              <p>{}</p>
+          {pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>}
         </header>
       </div>
     );
