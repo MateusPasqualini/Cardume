@@ -8,8 +8,7 @@ class GMap extends React.Component {
             <div className="g-map">
                 <GoogleMap 
                     defaultZoom={3}
-                    defaultCenter={{lat:-25.363882, lng: 131.044922}} 
-                    
+                    defaultCenter={{lat:-25.363882, lng: 131.044922}}   
                 >
                 </GoogleMap>
             </div>
