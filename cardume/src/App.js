@@ -6,7 +6,7 @@ import './css/App.css';
 import Eventos from './components/eventos'
 import logo from './cardume.svg';
 import back from './assets/back.svg';
-
+import Register from './components/register';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class App extends Component {
     this.handleClickBack = this.handleClickBack.bind(this);
     this.handleClickDetalhes = this.handleClickDetalhes.bind(this);
     this.handleClickIni = this.handleClickIni.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
   }
   handleClick(e) {
     this.setState({ page: 'detalhes' });//confirmPresenca
@@ -45,6 +46,10 @@ class App extends Component {
 
   handleClickDetalhes(e){
     this.setState({ page: 'confirmPresenca' });  
+  }
+
+  handleRegister(e) {
+    this.setState({ page: 'register' });
   }
   componentDidMount() {
   let url = 'https://cardume.herokuapp.com/eventos/lista';
@@ -78,11 +83,13 @@ class App extends Component {
          ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
           {pagina==='detalhes' && <Detalhes det={detalhes}/>}
+          {pagina==='register' && <Register />}
           {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
           {(pagina==='detalhes') && <button  onClick={this.handleClickDetalhes} type="button" class="btn btn-primary">Quero ajudar!</button>}
           {(pagina==='confirmPresenca') && <button  onClick={this.handleClickIni} type="button" class="btn btn-primary">Ir para a página inicial</button>}
           {(!pagina && pagina==='cadastroEven') && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Primary</button>}
           {!pagina && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Cadastro de evento</button>}
+          {!pagina && <button  onClick={this.handleRegister} type="button" class="btn btn-primary">Register</button>}
       </div>
       :null
     );
