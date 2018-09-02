@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import './App.css';
 import ConfirmarPresenca from './components/confirmarPresenca';
 import Detalhes from './components/detalhes';
 import CadastroEvento from './components/cadastroEvento';
+=======
+import './css/App.css';
+import Eventos from './components/eventos'
+import axios from 'axios';
+
+import ConfirmarPresenca from './components/confirmarPresenca'
+>>>>>>> 0dce0221db9589d8fd62a6d46906eccc2c6c0176
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +33,7 @@ class App extends Component {
         });
       });
 
+<<<<<<< HEAD
       console.log("AQUI:"+this.state.detalhes.titulo);
   //   axios
   //   .get(`https://cardume.herokuapp.com/eventos`)
@@ -54,6 +63,9 @@ class App extends Component {
   // //     console.log(this.state.eventos.description)
   //   })
   //    .catch(error => console.log(error));
+=======
+      console.log("AQUI:"+this.state.eventos.titulo);
+>>>>>>> 0dce0221db9589d8fd62a6d46906eccc2c6c0176
 }
 
 
@@ -66,11 +78,17 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
           {!pagina ?
+<<<<<<< HEAD
           <Detalhes det={detalhes} />
         : <ConfirmarPresenca />}
           <CadastroEvento/>
           <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>
               <p>{}</p>
+=======
+          <Eventos eve={eventos} />
+        : <ConfirmarPresenca />}
+          {pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>}
+>>>>>>> 0dce0221db9589d8fd62a6d46906eccc2c6c0176
         </header>
       </div>
     );
