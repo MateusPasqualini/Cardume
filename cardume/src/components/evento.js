@@ -5,13 +5,13 @@ import Moment from 'react-moment';
 function Evento(props) {
   return props ?(
     <div className='listCard'>
-    <h5 className='titleListCard'>Onde você quer doar seu tempo?</h5>
     <div class='card'>
     <div class='card-body'>
         <p className='card-title'>{props.key}</p>
         <p className='card-text'>{props.name}</p>
         <p className='card-horario'><img src={Date} alt='date'/> <Moment format="DD-MM-YYYY HH:mm">{props.data_inicio}</Moment> a <Moment format="DD-MM-YYYY HH:mm" date={props.data_fim}/></p>
         <p className='card-endereco'> <img src={Point} alt='point'></img>  {props.endereco}</p>
+        <button  onClick={this.handleClickDetails} type="button" class="btn btn-primary">Saiba Mais</button>
         
     </div>
     </div>
