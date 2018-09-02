@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import UserModel from '../model/userModel';
-import TextInput from 'react';
+import Checkin from '../model/checkin';
 
-class Register  extends React.Component {
+class Register extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,7 +25,7 @@ class Register  extends React.Component {
     }
 
     handleClick () {
-        const haveUser = UserModel.getInstance().getUserID != undefined;
+        const haveUser = UserModel.getInstance().getUserID() != undefined;
 
         const fakeData = {
             "email": this.state.username,
@@ -38,7 +38,11 @@ class Register  extends React.Component {
             .then( response => { 
                 console.log("Login")
                 console.log(response)
+                console.log(response.data.checkin)
                 UserModel.getInstance().setUserID(this.state.username)
+                UserModel.getInstance().setCheckins(response.data.checkin)
+                console.log("checkin")
+                console.log(UserModel.getInstance().getCheckins())
                 this.setState({ page: 'cadastroEven' });
             })
             .catch(error => {
@@ -58,7 +62,6 @@ class Register  extends React.Component {
                 console.log(error.response)
             });
         }
-          
       }
 
     render() { 

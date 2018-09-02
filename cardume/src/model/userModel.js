@@ -4,7 +4,9 @@ export default class UserModel {
 
     userEmail = "";
 
-    tokens = []
+    checkins = []
+
+    moedas = 0
 
     /**
      * @returns {UserModel}
@@ -23,13 +25,22 @@ export default class UserModel {
 
     setUserID(id) {
         this.userEmail = id;
+        this.checkins = []
     }
 
-    setToken(token){
-        this.tokens.concat(token)
+    setCheckins(checkins){
+        this.checkins = checkins
     }
 
-    getToken(){
-        return this.tokens
+    getCheckins(){
+        return this.checkins
+    }
+
+    setMoeda(moeda){
+        this.moeda = moeda
+    }
+
+    getMoeda(){
+        return this.moeda
     }
 }
