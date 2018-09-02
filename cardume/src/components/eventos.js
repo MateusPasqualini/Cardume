@@ -13,7 +13,7 @@ class Eventos extends React.Component {
 
     render() { 
         return this.props ?(
-            this.props.detalhes.map(c => <Evento key={c.descricao} name={c.titulo} />)
+            this.props.detalhes.map(c => <Evento descricao={c.descricao} name={c.titulo} endereco={c.endereco}/>)
         )
         : null
     } 
