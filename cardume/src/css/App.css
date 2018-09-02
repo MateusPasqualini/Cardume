@@ -4,8 +4,8 @@ body{
 }
 .imgBack{
   float:left;
-  margin-left:5em;
-  margin-top:0.7em;
+  padding-left:0.8rem;
+  padding-top:0.7rem;
 }
 .App-header{
   padding-bottom: 2%;
