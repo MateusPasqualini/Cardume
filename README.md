@@ -15,3 +15,8 @@ Ferramentas utilizadas
 Biblioteca externa
     
     REACT - Biblioteca de JavaScript
+
+
+
+
+bianca olhar esse link -> https://developers.google.com/maps/documentation/maps-static/get-api-key#digital-signature
