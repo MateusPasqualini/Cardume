@@ -11,7 +11,7 @@ import Register from './components/register';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {page:'', detalhes:null};
+    this.state = {page:'', detalhes:null, detalheID:null };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleClickEvento = this.handleClickEvento.bind(this);
@@ -20,6 +20,14 @@ class App extends Component {
     this.handleClickIni = this.handleClickIni.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
   }
+
+  onUpdate = (val) => {
+    this.setState({
+      detalheID: val
+    })
+    this.handleClick();
+  };
+
   handleClick(e) {
     this.setState({ page: 'detalhes' });//confirmPresenca
   }
@@ -57,7 +65,7 @@ class App extends Component {
   }
   componentDidMount() {
   let url = 'https://cardume.herokuapp.com/eventos/lista';
-  console.log("aaaa" + url);
+  
    fetch(url).
    //then(response => response.then((resp) => {
     then(response => response.json()).then((resp) => {
@@ -72,7 +80,7 @@ class App extends Component {
 
     const pagina = this.state.page;
     const detalhes = this.state.detalhes;
-    {console.log("AAAAAA" + detalhes)};  
+    const detalheID = this.state.detalheID;
     return (
       this.state.detalhes ?
       <div className="App">
@@ -82,10 +90,10 @@ class App extends Component {
          </header>
          {!pagina ?(
            
-          <Eventos detalhes={detalhes} nav={this.handleClick.bind(this)}/>
+          <Eventos detalhes={detalhes} onUpdate={this.onUpdate}/>
          ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
-          {pagina==='detalhes' && <Detalhes det={detalhes} page={pagina}/>}
+          {pagina==='detalhes' && <Detalhes det={detalheID===null ? detalhes : detalhes[detalheID]} page={pagina}/>}
           {pagina==='register' && <Register />}
           {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
           {(pagina==='detalhes') && <button  onClick={this.handleClickDetalhes} type="button" class="btn btn-primary">Quero ajudar!</button>}
