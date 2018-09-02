@@ -21,7 +21,7 @@ class PresencaConfirmada  extends React.Component {
 
     render() { 
         return (
-            <div className="cardBig">
+            <div className="card cardBig">
                 <p className="card-title">Obrigado por nos ajudar, agora você é mais um peixinho!<br/> Nos vemos no próximo evento!</p>
                 <button onClick={this.handleClick} type="button" class="btn btn-primary">Chekin</button>
             </div>

@@ -73,7 +73,7 @@ class App extends Component {
       this.state.detalhes ?
       <div className="App">
         <header className="App-header">
-        <img onClick={this.handleClickBack} src={back} alt='logo'/>
+        <img onClick={this.handleClickBack} src={back} alt='logo' className='imgBack'/>
          <img src={logo} alt='logo'/>
          </header>
          {!pagina ?(
