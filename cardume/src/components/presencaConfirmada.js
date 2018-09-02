@@ -7,7 +7,7 @@ class PresencaConfirmada  extends React.Component {
     handleClick () {
         const fakeData = {
             "id":"1", //id evento
-            "email": UserModel.getInstance.getUserID //email usuário
+            "email": UserModel.getInstance().getUserID() //email usuário
         };
           axios.post("https://cardume.herokuapp.com/eventos/checkin", fakeData)
             .then( response => { 
