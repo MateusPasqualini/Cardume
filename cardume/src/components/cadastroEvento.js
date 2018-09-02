@@ -37,7 +37,7 @@ class CadastroEvento  extends React.Component {
         console.log("respopnse")
         axios.post("https://cardume.herokuapp.com/eventos/novoEvento", this.state)
             .then( response => { 
-              console.log(response);
+              console.log("sdknaknsdnks" + response);
             })
             .catch(error => {
                 console.log(error.response)
@@ -52,7 +52,7 @@ class CadastroEvento  extends React.Component {
               Titulo:
               <input
                 className='form-control'
-                name="Titulo"
+                name="titulo"
                 type="text"
                 value={this.state.titulo}
                 onChange={this.handleInputChange} />
@@ -79,7 +79,7 @@ class CadastroEvento  extends React.Component {
                 Endereço:
                 <input
                 className='form-control'
-                name="Adress"
+                name="endereco"
                 type="text"
                 value={this.state.endereco}
                 onChange={this.handleInputChange} />                
@@ -88,7 +88,7 @@ class CadastroEvento  extends React.Component {
                 Telefone:
                 <input
                 className='form-control'
-                name="Telefone"
+                name="telefone"
                 type="number"
                 value={this.state.telefone}
                 onChange={this.handleInputChange} />                
@@ -97,7 +97,7 @@ class CadastroEvento  extends React.Component {
                 Número de voluntários:
                 <input
                 className='form-control'
-                name="Telefone"
+                name="numero_voluntarios"
                 type="number"
                 value={this.state.numero_voluntarios}
                 onChange={this.handleInputChange} />                
@@ -106,7 +106,7 @@ class CadastroEvento  extends React.Component {
               Descrição:
               <textarea
                 className='form-control'
-                name="Descricao"
+                name="descricao"
                 type="text"
                 checked={this.state.descricao}
                 onChange={this.handleInputChange} />
@@ -115,9 +115,9 @@ class CadastroEvento  extends React.Component {
               Moedas:
               <input
                 className='form-control'
-                name="Descricao"
+                name="moedas"
                 type="number"
-                checked={this.state.descricao}
+                checked={this.state.moedas}
                 onChange={this.handleInputChange} />
             </label><br/>
             <button type='submit' onClick={this.handleSubmit} className='btn btn-primary'>Cadastrar</button>
