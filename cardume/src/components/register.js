@@ -25,10 +25,8 @@ class Register  extends React.Component {
     }
 
     handleClick () {
-        const haveUser = UserModel.getInstance.getUserID != undefined;
+        const haveUser = UserModel.getInstance().getUserID != undefined;
 
-        console.log("User")
-        console.log(UserModel.getInstance.getUserID)
         const fakeData = {
             "email": this.state.username,
 	        "senha": this.state.password
@@ -40,7 +38,7 @@ class Register  extends React.Component {
             .then( response => { 
                 console.log("Login")
                 console.log(response)
-                UserModel.getInstance.setUserID(this.state.username)
+                UserModel.getInstance().setUserID(this.state.username)
                 this.setState({ page: 'cadastroEven' });
             })
             .catch(error => {
@@ -53,7 +51,7 @@ class Register  extends React.Component {
             .then( response => { 
                 console.log("Register")
                 console.log(response)
-                UserModel.getInstance.setUserID(this.state.username)
+                UserModel.getInstance().setUserID(this.state.username)
                 this.setState({ page: 'cadastroEven' });
             })
             .catch(error => {
@@ -78,17 +76,6 @@ class Register  extends React.Component {
             </label>
             <input type="submit" value="Submit" />
              </form>
-                 {/* <TextInput
-                    ref= {(el) => { this.username = el; }}
-                    onChangeText={(username) => this.setState({username})}
-                    value={this.state.username}
-                /> */}
-                {/* <TextInput
-                    ref= {(pas) => { this.password = pas; }}
-                    onChangeText={(password) => this.setState({password})}
-                    value={this.state.password}
-                /> */}
-                {/* <button onClick={this.handleClick} type="button" class="btn btn-primary">Login</button> */}
             </div>
         );
     } 
