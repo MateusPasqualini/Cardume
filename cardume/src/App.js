@@ -27,9 +27,9 @@ class App extends Component {
 
   onUpdate = (val) => {
     this.setState({
-      detalheID: val
+      detalheID: val,
+      page: 'detalhes'
     })
-    this.handleClick();
   };
 
   handleClick(e) {
@@ -105,7 +105,7 @@ class App extends Component {
           <Eventos detalhes={detalhes} onUpdate={this.onUpdate}/>
          ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
-          {pagina==='detalhes' && <Detalhes det={detalheID===null ? detalhes : detalhes[detalheID]} page={pagina}/>}
+          {pagina==='detalhes' ? <Detalhes det={detalhes[detalheID]} page={pagina}/> : null}
           {pagina==='register' && <Register />}
           {pagina==='perfil' && <Perfil id={UserModel.getInstance().getUserID()}/>}
           {pagina==='login' && <Login id={UserModel.getInstance().getUserID()}/>}
