@@ -16,7 +16,15 @@ class Eventos extends React.Component {
         return this.props ?(
             <div>
             <h5 className='titleListCard'>Onde você quer doar seu tempo?</h5>
-            {this.props.detalhes.map((c, index) => <Evento id={index} onUpdate={this.props.onUpdate} descricao={c.descricao} name={c.titulo} endereco={c.endereco} page={this.props.pagina}/>)}
+            {this.props.detalhes.length && this.props.detalhes.map((c, index) => (
+            <Evento
+                id={index}
+                onUpdate={this.props.onUpdate}
+                descricao={c.descricao}
+                name={c.titulo}
+                endereco={c.endereco}
+                page={this.props.pagina}
+            />))}
             </div>
         )
         : null

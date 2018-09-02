@@ -27,14 +27,10 @@ class App extends Component {
 
   onUpdate = (val) => {
     this.setState({
-      detalheID: val
+      detalheID: val,
+      page: 'detalhes'
     })
-    this.handleClick();
   };
-
-  handleClick(e) {
-    this.setState({ page: 'detalhes' });//confirmPresenca
-  }
 
   handleClickEvento(e) {
     this.setState({ page: 'cadastroEven' });
@@ -105,11 +101,11 @@ class App extends Component {
           <Eventos detalhes={detalhes} onUpdate={this.onUpdate}/>
          ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
-          {pagina==='detalhes' && <Detalhes det={detalheID===null ? detalhes : detalhes[detalheID]} page={pagina}/>}
+          {pagina==='detalhes' ? <Detalhes det={detalhes[detalheID]} page={pagina}/> : null}
           {pagina==='register' && <Register />}
           {pagina==='perfil' && <Perfil id={UserModel.getInstance().getUserID()}/>}
           {pagina==='login' && <Login id={UserModel.getInstance().getUserID()}/>}
-          {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>}
+          {/* {!pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Quero saber mais</button>} */}
           {(pagina==='detalhes') && <button  onClick={this.handleClickDetalhes} type="button" class="btn btn-primary">Quero ajudar!</button>}
           {(pagina==='confirmPresenca') && <button  onClick={this.handleClickIni} type="button" class="btn btn-primary">Ir para a página inicial</button>}
           {!pagina && <button  onClick={this.handleClickEvento} type="button" class="btn btn-primary">Cadastro de evento</button>}
