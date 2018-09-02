@@ -4,6 +4,8 @@ import Detalhes from './components/detalhes';
 import CadastroEvento from './components/cadastroEvento';
 import './css/App.css';
 import Eventos from './components/eventos'
+import axios from 'axios';
+import logo from './cardume.svg';
 
 
 class App extends Component {
@@ -37,13 +39,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-          {!pagina ?
-          <Detalhes det={detalhes} />
+         <img src={logo} alt='logo'/>
+         </header>
+         {!pagina ?
+          <Eventos eve={detalhes} />
         : <ConfirmarPresenca />}
-        <CadastroEvento/>
+        {pagina=='cadastroEven' && <CadastroEvento/>}
           {pagina && <button  onClick={this.handleClick} type="button" class="btn btn-primary">Primary</button>}
-        </header>
       </div>
     );
   }
