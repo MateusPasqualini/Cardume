@@ -15,7 +15,6 @@ function Evento(props) {
         <p className='card-text'>{props.name}</p>
         <p className='card-horario'><img src={Date} alt='date'/> <Moment format="DD-MM-YYYY HH:mm">{props.data_inicio}</Moment> a <Moment format="DD-MM-YYYY HH:mm" date={props.data_fim}/></p>
         <p className='card-endereco'> <img src={Point} alt='point'></img>  {props.endereco}</p>
-        <Router><Link to ='/detalhes' props={props}><button type="button" class="btn btn-primary btnEvento">Saiba Mais</button></Link></Router>
     </div>
     </div>
     </div>
