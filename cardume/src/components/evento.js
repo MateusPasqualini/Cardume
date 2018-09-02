@@ -3,12 +3,12 @@ import Point from '../assets/point.svg';
 import Date from '../assets/date.svg';
 import Moment from 'react-moment';
 import Detalhes from './detalhes';
-import {BrowserRouter as Router, Link}from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link}from 'react-router-dom';
 import { Redirect } from 'react-router';
 
 function Evento(props) {
   return props ?(
-    <div className='listCard'>
+    <div className='listCard' onClick={props.nav}>
     <div class='card'>
     <div class='card-body'>
         <p className='card-title'>{props.key}</p>

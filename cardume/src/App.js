@@ -94,8 +94,7 @@ class App extends Component {
          </header>
          {!pagina ?(
            
-          <Eventos detalhes={detalhes}
-            />
+          <Eventos detalhes={detalhes} nav={this.handleClick.bind(this)}/>
          ): pagina ==='confirmPresenca' &&  <PresencaConfirmada />}
           {pagina==='cadastroEven' && <CadastroEvento/>}
           {pagina==='detalhes' && <Detalhes det={detalhes} page={pagina}/>}
