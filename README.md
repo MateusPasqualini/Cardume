@@ -15,9 +15,3 @@ Ferramentas utilizadas
 Biblioteca externa
     
     REACT - Biblioteca de JavaScript
-
-
-
-
-bianca olhar esse link -> https://developers.google.com/maps/documentation/maps-static/get-api-key#digital-signature
-https://maps.googleapis.com/maps/api/staticmap?center=Berkeley,CA&zoom=13&size=400x400&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&signature=NZMTsRQ98_nbqv4GNcrJJwjZAKA=
